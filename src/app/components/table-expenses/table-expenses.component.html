@@ -1,0 +1,27 @@
+<app-table-header [title]="'Expenses'" ></app-table-header>
+<table class="table table-hover table-striped w-50 table-bordered container-fluid justify-content-center mb-3">
+  <thead class="tableHead text-center">
+  <tr>
+    <th scope="col">Purchase</th>
+    <th scope="col">Cost</th>
+    <th scope="col">Category</th>
+    <th scope="col">Day</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="text-center" *ngFor="let i of [1,2,3,4,5,6,7,8,9]">
+    <td>
+      IGA
+    </td>
+    <td>{{ 45 | currency }}</td>
+    <td>
+      Food
+      <p>
+        <ngb-progressbar type="success" [value]="25" [striped]="true"></ngb-progressbar>
+      </p>
+    </td>
+    <td>{{ i }}</td>
+  </tr>
+  </tbody>
+</table>
+<app-table-footer></app-table-footer>

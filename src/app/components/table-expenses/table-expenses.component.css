@@ -1,11 +1,10 @@
-.navbar {
+.tableHead {
   background-color: black;
   color: white;
 }
 
-.calendarDiv {
-  margin-bottom: 50px;
-}
-
 @media (max-width: 767.98px) {
+  .table {
+    min-width: 100% !important;
+  }
 }

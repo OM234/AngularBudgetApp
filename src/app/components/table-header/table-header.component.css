@@ -1,0 +1,8 @@
+.title {
+  color: dimgray
+}
+@media (max-width: 767.98px) {
+  .tableHeader {
+    min-width: 99% !important;
+  }
+}

@@ -1,0 +1,23 @@
+<app-table-header [title]="'Income'" ></app-table-header>
+<table class="table table-striped w-50 table-bordered container-fluid justify-content-center mb-3">
+  <thead class="tableHead text-center">
+  <tr>
+    <th scope="col">Category</th>
+    <th scope="col">Amount</th>
+    <th scope="col">Day</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="text-center" *ngFor="let i of [1,2,3]">
+    <td>
+      PayCheque
+      <p>
+        <ngb-progressbar type="success" [value]="50" [striped]="true"></ngb-progressbar>
+      </p>
+    </td>
+    <td>{{ 1700 | currency }}</td>
+    <td>{{ i }}</td>
+  </tr>
+  </tbody>
+</table>
+<app-table-footer></app-table-footer>
