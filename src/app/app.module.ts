@@ -7,6 +7,7 @@ import { TableExpensesComponent } from './components/table-expenses/table-expens
 import { TableIncomeComponent } from './components/table-income/table-income.component';
 import { TableHeaderComponent } from './components/table-header/table-header.component';
 import { TableFooterComponent } from './components/table-footer/table-footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TableFooterComponent } from './components/table-footer/table-footer.com
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

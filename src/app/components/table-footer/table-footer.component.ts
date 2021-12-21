@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-table-footer',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table-footer.component.css']
 })
 export class TableFooterComponent implements OnInit {
+  @Input() type: string = '';
+  @Input() total: number = 0;
 
   constructor() { }
 
