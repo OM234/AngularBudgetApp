@@ -1,10 +1,21 @@
 import {Component} from '@angular/core';
+import {animate, state, style, transition, trigger} from "@angular/animations";
 
 export interface IncomeRow {
   day: number,
   category: string,
   amount: number
 }
+
+export const animationsArr: [any] = [
+  trigger('fadeIn', [
+    state('in', style({opacity: 1})),
+    transition(':enter', [
+      style({opacity: 0}),
+      animate(300)
+    ])
+  ])
+]
 
 /**
  * To be removed once data store completed
@@ -19,7 +30,8 @@ const INCOME_DATA: IncomeRow[] = [
 @Component({
   selector: 'app-table-income',
   templateUrl: './table-income.component.html',
-  styleUrls: ['./table-income.component.css']
+  styleUrls: ['./table-income.component.css'],
+  animations: animationsArr
 })
 export class TableIncomeComponent {
   displayedColumns: string[] = ['day', 'category', 'amount'];

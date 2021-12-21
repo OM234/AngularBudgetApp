@@ -14,6 +14,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatListModule} from "@angular/material/list";
 import { TableExpensesTotalComponent } from './components/table-expenses-total/table-expenses-total.component';
+import { DelayDirective } from './directives/delay.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TableExpensesTotalComponent } from './components/table-expenses-total/t
     TableIncomeComponent,
     TableHeaderComponent,
     TableFooterComponent,
-    TableExpensesTotalComponent
+    TableExpensesTotalComponent,
+    DelayDirective
   ],
     imports: [
         BrowserModule,

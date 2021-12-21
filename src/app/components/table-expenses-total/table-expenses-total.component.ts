@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {animationsArr} from "../table-income/table-income.component";
 
 export interface TotalExpensesRow {
   category: string,
@@ -17,7 +18,8 @@ const TOTAL_EXPENSES_DATA: TotalExpensesRow[] = [
 @Component({
   selector: 'app-table-expenses-total',
   templateUrl: './table-expenses-total.component.html',
-  styleUrls: ['./table-expenses-total.component.css', '../table-income/table-income.component.css']
+  styleUrls: ['./table-expenses-total.component.css', '../table-income/table-income.component.css'],
+  animations: animationsArr
 })
 export class TableExpensesTotalComponent {
   displayedColumns: string[] = ['category', 'amount'];
