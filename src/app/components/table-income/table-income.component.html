@@ -1,23 +1,30 @@
-<app-table-header [title]="'Income'" ></app-table-header>
-<table class="table table-striped w-50 table-bordered container-fluid justify-content-center mb-3">
-  <thead class="tableHead text-center">
-  <tr>
-    <th scope="col">Category</th>
-    <th scope="col">Amount</th>
-    <th scope="col">Day</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr class="text-center" *ngFor="let i of [1,2,3]">
-    <td>
-      PayCheque
-      <p>
-        <ngb-progressbar type="success" [value]="50" [striped]="true"></ngb-progressbar>
-      </p>
-    </td>
-    <td>{{ 1700 | currency }}</td>
-    <td>{{ i }}</td>
-  </tr>
-  </tbody>
-</table>
-<app-table-footer [type]="'Income'" [total]="3000"></app-table-footer>
+<div class="topContentDiv">
+  <mat-card class="primaryCard">
+    <mat-card-header>
+      <mat-card-title class="h3">Income</mat-card-title>
+      <div class="spacer"></div>
+      <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+    </mat-card-header>
+    <mat-card-content>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 income-table">
+        <ng-container matColumnDef="day">
+          <th mat-header-cell *matHeaderCellDef>Day</th>
+          <td mat-cell *matCellDef="let element"> {{element.day}} </td>
+        </ng-container>
+        <ng-container matColumnDef="category">
+          <th mat-header-cell *matHeaderCellDef>Category</th>
+          <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef>Amount</th>
+          <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <div style="text-align: right; padding-top: 10px">
+        <app-table-footer [type]="'Income'" [total]="3000"></app-table-footer>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

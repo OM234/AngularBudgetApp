@@ -1,16 +1,14 @@
-<nav class="navbar navbar mb-5 ">
-  <span class="navbar-brand mb-0 h1">OZBudget</span>
-  <div class="me-auto">
-    <a href="#" class="p-3">Transactions</a>
-    <a href="#" class="">Budget</a>
-  </div>
-</nav>
-
-<div class="d-flex justify-content-center calendarDiv">
-<input class="border border-dark rounded" type="month" id="start" name="start"
-       min="2021-01" value="2021-12">
-</div>
+<p>
+  <mat-toolbar color="primary">
+    <span>Tiny Budgeter</span>
+    <span class="spacer"></span>
+  </mat-toolbar>
+</p>
+<!--<div class="d-flex justify-content-center calendarDiv">-->
+<!--<input class="border border-dark rounded" type="month" id="start" name="start"-->
+<!--       min="2021-01" value="2021-12">-->
+<!--</div>-->
 
 <app-table-income></app-table-income>
 <app-table-expenses></app-table-expenses>
-
+<app-table-expenses-total></app-table-expenses-total>
