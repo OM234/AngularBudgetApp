@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {MatDialog} from "@angular/material/dialog";
 import {InputIncomeComponent} from "../transaction-inputs/input-income/input-income.component";
+import {ExpensesRow} from "../table-expenses/table-expenses.component";
 
 export interface IncomeRow {
   day: number,
@@ -38,10 +39,19 @@ const INCOME_DATA: IncomeRow[] = [
 export class TableIncomeComponent {
   displayedColumns: string[] = ['day', 'category', 'amount'];
   dataSource = INCOME_DATA;
+  clickedRow: IncomeRow | undefined;
 
   constructor(public newTransactionDialog: MatDialog){}
 
   openNewTransaction(): void {
     const newTransactionRef = this.newTransactionDialog.open(InputIncomeComponent);
+  }
+
+  clickOnRow(row: ExpensesRow) {
+    if(this.clickedRow == row) {
+      this.clickedRow = undefined;
+      return;
+    }
+    this.clickedRow = row;
   }
 }
