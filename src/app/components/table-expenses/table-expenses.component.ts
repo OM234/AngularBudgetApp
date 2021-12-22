@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {animationsArr} from "../table-income/table-income.component";
+import {InputIncomeComponent} from "../transaction-inputs/input-income/input-income.component";
+import {MatDialog} from "@angular/material/dialog";
+import {InputExpenseComponent} from "../transaction-inputs/input-expense/input-expense.component";
 
 export interface ExpensesRow {
   day: number,
@@ -27,4 +30,10 @@ const EXPENSES_DATA: ExpensesRow[] = [
 export class TableExpensesComponent {
   displayedColumns: string[] = ['day','description', 'category', 'amount'];
   dataSource = EXPENSES_DATA;
+
+  constructor(public newTransactionDialog: MatDialog){}
+
+  openNewTransaction(): void {
+    const newTransactionRef = this.newTransactionDialog.open(InputExpenseComponent);
+  }
 }

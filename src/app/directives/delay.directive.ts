@@ -10,10 +10,8 @@ export class DelayDirective {
       this.viewContainer.createEmbeddedView(this.templateRef);
     }, ms);
   }
-
   constructor(
     private templateRef: TemplateRef<any>,
     private viewContainer: ViewContainerRef){
   }
-
 }

@@ -3,7 +3,9 @@
     <mat-card-header>
       <mat-card-title class="h3">Income</mat-card-title>
       <div class="spacer"></div>
-      <mat-icon aria-hidden="false" aria-label="Example home icon">add</mat-icon>
+      <button mat-icon-button>
+        <mat-icon class="mat-e" aria-hidden="false" aria-label="Add income icon" (click)="openNewTransaction()">add</mat-icon>
+      </button>
     </mat-card-header>
     <mat-card-content>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 income-table">

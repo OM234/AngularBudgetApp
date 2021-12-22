@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Add Expense</h1>
+<div mat-dialog-content>
+  <form class="add-transaction-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Day</mat-label>
+      <input matInput [matDatepicker]="picker1" [formControl]="today">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <mat-select #categorySelect>
+        <mat-option *ngFor="let category of CATEGORIES" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill" *ngIf="categorySelect.value === 'Other'">
+      <mat-label>Category</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Amount($)</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <div class="spacer"></div>
+  <button mat-button>Add</button>
+</div>
